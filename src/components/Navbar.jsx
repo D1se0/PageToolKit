@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Icon from './Icon.jsx'
 import TeamSwitch from './TeamSwitch.jsx'
 
@@ -5,14 +6,14 @@ export default function Navbar({ team, setTeam }) {
   return (
     <header className="navbar">
       <div className="navbar-inner">
-        <a href="#top" className="brand">
+        <Link to="/" className="brand">
           <span className="brand-mark">
             <Icon name="shieldLock" size={22} strokeWidth={1.9} />
           </span>
           <span className="brand-text">
             D1se0<span className="brand-dot">::</span>ToolKit
           </span>
-        </a>
+        </Link>
 
         <TeamSwitch team={team} setTeam={setTeam} compact />
 
