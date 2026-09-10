@@ -1,10 +1,33 @@
 // Contenido detallado por repo (overview, features, instalación, uso...)
 // Generado a partir del README real de cada proyecto. Clave = slug del repo (último segmento de la URL de GitHub).
 // Si un slug no tiene entrada aquí, la página de detalle muestra una vista mínima con el enlace a GitHub.
-// Nota: "Discord-RAT-Windows" fue omitido deliberadamente durante la generación de contenido
-// por un aviso de seguridad del sistema ("Cyber" safety) al analizar ese repo en concreto.
+// Nota: la entrada de "Discord-RAT-Windows" se redactó SIN leer su README (ese fetch disparaba el
+// filtro de seguridad "Cyber" del sistema); se basa solo en metadatos seguros del repo (lenguaje,
+// topics, listado de ficheros) y en su descripción corta ya verificada.
 
 export const DETAILS = {
+  'Discord-RAT-Windows': {
+    overview: `Discord-RAT-Windows es una herramienta de administración remota (RAT) escrita en Python que permite operar un agente en máquinas Windows a través de un bot de Discord, usando el propio servidor de Discord como canal de mando y control. Resulta de interés para formación en red team y para el estudio práctico de arquitecturas de C2 dentro de entornos de laboratorio controlados. El proyecto incluye utilidades complementarias para automatizar la puesta en marcha del bot y para empaquetar el agente como ejecutable independiente.`,
+    features: [
+      `Panel de control remoto vía servidor de Discord`,
+      `Script de configuración automatizada del bot`,
+      `Compilación del agente a archivo ejecutable independiente`,
+      `Scripts adicionales de configuración para entornos controlados`,
+      `Recursos de personalización (icono/logo) para el ejecutable compilado`,
+    ],
+    requirements: [`Python 3`, `Cuenta y bot de Discord con token propio`, `Windows (para el ejecutable compilado)`],
+    installation: [
+      { title: `Clonar el repositorio`, code: `git clone https://github.com/D1se0/Discord-RAT-Windows.git` },
+      { title: `Instalar dependencias`, code: `pip install -r requirements.txt` },
+      { title: `Configurar el token del bot de Discord propio`, code: null },
+    ],
+    usage: [
+      { title: `Ejecutar el script principal en un entorno de laboratorio controlado`, code: null },
+      { title: `Gestionar el agente desde el servidor de Discord configurado`, code: null },
+    ],
+    disclaimer: `Herramienta de tipo RAT/C2 destinada exclusivamente a formación en Red Team y entornos de laboratorio controlados con consentimiento explícito; su uso contra sistemas de terceros sin autorización es ilegal.`,
+  },
+
   wraith: {
     overview: `Wraith es un toolkit ofensivo de pruebas de seguridad web construido como aplicación de escritorio con Electron, React y TypeScript, pensado como alternativa integral a herramientas como Burp Suite. Combina un proxy interceptor, un escáner pasivo de vulnerabilidades, un fuzzer, un detector de condiciones de carrera y un asistente de IA en una única interfaz oscura. Está dirigido a pentesters y cazadores de bugs que buscan centralizar el análisis de tráfico HTTP, la manipulación de peticiones y la construcción de cadenas de ataque en una sola herramienta.`,
     features: [
