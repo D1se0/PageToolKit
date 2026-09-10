@@ -209,6 +209,37 @@ const PATHS = {
       <path d="M3 20h18" />
     </>
   ),
+  copy: (
+    <>
+      <rect x="9" y="9" width="11" height="11" rx="1.8" />
+      <path d="M6 15H5.5A1.5 1.5 0 0 1 4 13.5v-8A1.5 1.5 0 0 1 5.5 4h8A1.5 1.5 0 0 1 15 5.5V6" />
+    </>
+  ),
+  check: <path d="M4.5 12.5 9.5 17.5 19.5 6.5" />,
+  arrowLeft: (
+    <>
+      <path d="M19 12H5" />
+      <path d="M11 6 5 12l6 6" />
+    </>
+  ),
+  arrowUpRight: (
+    <>
+      <path d="M7 17 17 7" />
+      <path d="M8 7h9v9" />
+    </>
+  ),
+  warning: (
+    <>
+      <path d="M12 3.5 21.5 20h-19Z" />
+      <path d="M12 9.8v4.2" />
+      <circle cx="12" cy="17" r="0.9" fill="currentColor" stroke="none" />
+    </>
+  ),
+  hash: (
+    <>
+      <path d="M9 3.5 7 20.5M17 3.5l-2 17M4 8.5h16M3 15.5h16" />
+    </>
+  ),
 }
 
 export default function Icon({ name, size = 22, strokeWidth = 1.7, className = '' }) {

@@ -1,6 +1,12 @@
+import { AnimatePresence, motion } from 'framer-motion'
 import RepoCard from './RepoCard.jsx'
 import Icon from './Icon.jsx'
 import { REPOS } from '../data/repos.js'
+
+const gridVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.05 } },
+}
 
 export default function RepoGrid({ team, category, search }) {
   const q = search.trim().toLowerCase()
@@ -16,19 +22,21 @@ export default function RepoGrid({ team, category, search }) {
 
   if (filtered.length === 0) {
     return (
-      <div className="empty-state">
+      <motion.div className="empty-state" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <Icon name="folderSearch" size={34} strokeWidth={1.4} />
         <p>No se han encontrado herramientas con esos filtros.</p>
-      </div>
+      </motion.div>
     )
   }
 
   return (
-    <div className="repo-grid">
-      {filtered.map((repo, i) => (
-        <RepoCard key={repo.name} repo={repo} style={{ animationDelay: `${Math.min(i, 12) * 45}ms` }} />
-      ))}
-    </div>
+    <motion.div className="repo-grid" variants={gridVariants} initial="hidden" animate="visible">
+      <AnimatePresence mode="popLayout">
+        {filtered.map((repo) => (
+          <RepoCard key={repo.name} repo={repo} />
+        ))}
+      </AnimatePresence>
+    </motion.div>
   )
 }
 
